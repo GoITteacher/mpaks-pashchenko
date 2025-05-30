@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Шифр Тритеміуса</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Криптосистема: Шифр Тритеміуса</h1>
+
+    <div class="input-section">
+      <textarea id="inputText" placeholder="Введіть текст..."></textarea>
+      <select id="language">
+        <option value="en">Англійська</option>
+        <option value="ua">Українська</option>
+      </select>
+    </div>
+
+    <div class="key-section">
+      <h3>Тип ключа:</h3>
+      <select id="mode" onchange="toggleKeyInputs()">
+        <option value="linear">Лінійний (A*p + B)</option>
+        <option value="nonlinear">Нелінійний (A*p² + B*p + C)</option>
+        <option value="keyword">Гасло</option>
+      </select>
+
+      <div id="linearKeys">
+        <input type="number" id="A_linear" placeholder="A" />
+        <input type="number" id="B_linear" placeholder="B" />
+      </div>
+
+      <div id="nonlinearKeys" style="display: none">
+        <input type="number" id="A_nl" placeholder="A" />
+        <input type="number" id="B_nl" placeholder="B" />
+        <input type="number" id="C_nl" placeholder="C" />
+      </div>
+
+      <div id="keywordKey" style="display: none">
+        <input type="text" id="keyword" placeholder="Гасло" />
+      </div>
+    </div>
+
+    <div class="button-section">
+      <button onclick="encrypt()">Зашифрувати</button>
+      <button onclick="decrypt()">Розшифрувати</button>
+      <button onclick="saveFile()">Зберегти у файл</button>
+      <input type="file" id="fileInput" onchange="loadFile()" />
+    </div>
+
+    <div class="output-section">
+      <textarea id="outputText" placeholder="Результат..."></textarea>
+    </div>
+
+    <footer>Розробник: Пащенко Володимир, група 121м-24-1</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
