@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Шифр Цезаря</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Криптосистема: Шифр Цезаря</h1>
+
+    <div class="input-section">
+      <textarea id="inputText" placeholder="Введіть текст..."></textarea>
+      <input type="number" id="key" placeholder="Ключ (зміщення)" />
+      <select id="language">
+        <option value="en">Англійська</option>
+        <option value="ua">Українська</option>
+      </select>
+    </div>
+
+    <div class="button-section">
+      <button onclick="encrypt()">Зашифрувати</button>
+      <button onclick="decrypt()">Розшифрувати</button>
+      <button onclick="bruteForce()">Brute Force</button>
+      <button onclick="saveFile()">Зберегти у файл</button>
+      <input type="file" id="fileInput" onchange="loadFile()" />
+    </div>
+
+    <div class="output-section">
+      <textarea id="outputText" placeholder="Результат..."></textarea>
+    </div>
+
+    <footer>Розробник: Пащенко Володимир, група 121м-24-1</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
