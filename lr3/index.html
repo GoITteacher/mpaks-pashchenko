@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Шифр гамування</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Криптосистема: Шифр гамування</h1>
+
+    <div class="input-section">
+      <textarea id="inputText" placeholder="Введіть текст..."></textarea>
+      <select id="language">
+        <option value="en">Англійська</option>
+        <option value="ua">Українська</option>
+      </select>
+    </div>
+
+    <div class="key-section">
+      <h3>Ключ (гама):</h3>
+      <input
+        type="text"
+        id="gamma"
+        placeholder="Введіть гамму (текстовий ключ)"
+      />
+      <button onclick="generateRandomGamma()">
+        Згенерувати випадкову гамму
+      </button>
+    </div>
+
+    <div class="button-section">
+      <button onclick="encrypt()">Зашифрувати</button>
+      <button onclick="decrypt()">Розшифрувати</button>
+      <button onclick="saveFile()">Зберегти у файл</button>
+      <input type="file" id="fileInput" onchange="loadFile()" />
+    </div>
+
+    <div class="output-section">
+      <textarea id="outputText" placeholder="Результат..."></textarea>
+    </div>
+
+    <footer>Розробник: Пащенко Володимир, група 121м-24-1</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

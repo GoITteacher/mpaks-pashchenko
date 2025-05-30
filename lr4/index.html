@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Шифрування DES / TripleDES / AES</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  </head>
+  <body>
+    <h1>Криптосистема: DES, TripleDES, AES</h1>
+
+    <div class="input-section">
+      <textarea id="inputText" placeholder="Введіть текст..."></textarea>
+    </div>
+
+    <div class="key-section">
+      <h3>Вибір алгоритму:</h3>
+      <select id="algorithm">
+        <option value="DES">DES</option>
+        <option value="TripleDES">TripleDES</option>
+        <option value="AES">AES</option>
+      </select>
+
+      <h3>Ключ:</h3>
+      <input type="text" id="key" placeholder="Введіть ключ" />
+
+      <h3>Вектор ініціалізації (IV):</h3>
+      <input type="text" id="iv" placeholder="Введіть IV (необов'язково)" />
+    </div>
+
+    <div class="button-section">
+      <button onclick="encrypt()">Зашифрувати</button>
+      <button onclick="decrypt()">Розшифрувати</button>
+      <button onclick="saveFile()">Зберегти у файл</button>
+      <input type="file" id="fileInput" onchange="loadFile()" />
+    </div>
+
+    <div class="output-section">
+      <textarea id="outputText" placeholder="Результат..."></textarea>
+    </div>
+
+    <footer>Розробник: Пащенко Володимир, група 121м-24-1</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
